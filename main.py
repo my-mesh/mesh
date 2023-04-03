@@ -65,6 +65,6 @@ try:
                 req = requests.post("http://127.0.0.1:5000/data", data=result)
             except:
                 print("Server not responding")
-finally:
+except:
     print("Mesh stopped")
     radio.power = False

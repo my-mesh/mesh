@@ -10,7 +10,7 @@ User=max
 Group=max
 WorkingDirectory=/srv/git/mesh
 Environment="PATH=/srv/git/mesh/env/bin"
-ExecStart=/srv/git/server/env/bin/python3 -m main.py &
+ExecStart=/srv/git/server/env/bin/python3 -m main.py
 Restart=on-failure
 RestartSec=5s
 
