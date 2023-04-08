@@ -1,6 +1,6 @@
 import struct
 import requests
-
+import time
 from pyrf24 import RF24, RF24Network, RF24Mesh
 from utils.payload import convert_payload
 from utils.index import get_index
@@ -20,6 +20,7 @@ print("Mesh started")
 
 try:
     while True:
+        time.sleep(0.01)
         mesh.update()
         mesh.dhcp()
 
