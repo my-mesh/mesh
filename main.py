@@ -29,23 +29,29 @@ try:
             node_id = mesh.get_node_id(header.from_node)
             network_id = header.from_node
 
+            print(node_id)
+            print(network_id)
+
             node = {"node_id": node_id, "network_id": network_id}
 
             index_network = get_index(new_nodes, network_id, "network_id")
             index_node = get_index(new_nodes, node_id, "node_id")
 
             if index_node != -1:
+                print("pop")
                 new_nodes.pop(index_node)
 
             if index_network != -1:
+                print("send_again")
                 mesh.write(
                     struct.pack("i", new_nodes[index_network]["node_id"]), 90, 255
                 )
 
             if index_network == -1 and node_id == 255:
+                print("create new")
                 try:
                     req = requests.post(
-                        "http://127.0.0.1:5000/nodes", data={"type": "test"}
+                        "http://127.0.0.1:5000/nodes", data={"type": header.type}
                     )
                     req_json = req.json()
                     node["node_id"] = int(req_json["id"])
