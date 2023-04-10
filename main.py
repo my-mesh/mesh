@@ -59,6 +59,7 @@ try:
             result = dict()
             result["payload"] = payload_converted
             result["node_id"] = node_id
+            result["type"] = header.type
 
             print(result)
 
