@@ -11,8 +11,8 @@ def convert_payload(payload, type):
         result = dict()
 
         try:
-            result["temp"] = struct.unpack("f", payload[0:4])[0]
-            result["hum"] = struct.unpack("f", payload[4:8])[0]
+            result["hum"] = struct.unpack("f", payload[0:4])[0]
+            result["temp"] = struct.unpack("f", payload[4:8])[0]
         except:
             return None
 
