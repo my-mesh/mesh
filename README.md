@@ -62,7 +62,7 @@ if index_network == -1 and node_id == 255:
     except:
         print("Server not responding")
 ```
-Falls eine Nachricht von NodeID 255 gesendet wurde. Handelt es sich hierbei um eine neue neue Node im System. Dementsprechend wird eine Post Request an den Webserver gesendet welcher eine neue Node in der Datenbank erstellt und eine freie ID welche nicht 255 ist zurücksendet. Diese ID wird jetzt an die Node mit der ID 255 gesendet bis diese die neue ID empfangen hat und geändert hat.
+Falls eine Nachricht von NodeID 255 gesendet wurde. Handelt es sich hierbei um eine neue Node im System. Dementsprechend wird eine Post Request an den Webserver gesendet welcher eine neue Node in der Datenbank erstellt und eine freie ID welche nicht 255 ist zurücksendet. Diese ID wird jetzt an die Node mit der ID 255 gesendet bis diese die neue ID empfangen hat und geändert hat.
 <br><br>
 
 ```py
