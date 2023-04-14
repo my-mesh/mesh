@@ -7,10 +7,14 @@ from utils.index import get_index
 
 SERVER_URL = "http://127.0.0.1:5000/nodes"
 
+# RF24 Setup
 radio = RF24(22, 10)
 network = RF24Network(radio)
 mesh = RF24Mesh(radio, network)
+
+# Master Node is always 0
 mesh.node_id = 0
+
 new_nodes = []
 
 if not mesh.begin():
@@ -33,10 +37,10 @@ try:
             print(network_id)
 
             node = {"node_id": node_id, "network_id": network_id}
-
+            
             index_network = get_index(new_nodes, network_id, "network_id")
             index_node = get_index(new_nodes, node_id, "node_id")
-
+            
             if index_node != -1:
                 print("pop")
                 new_nodes.pop(index_node)
