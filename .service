@@ -6,8 +6,6 @@ StartLimitIntervalSec=500
 StartLimitBurst=5
 
 [Service]
-User=max
-Group=max
 WorkingDirectory=/srv/git/mesh
 Environment="PATH=/srv/git/mesh/env/bin"
 ExecStart=/srv/git/server/env/bin/python3 -m main.py
