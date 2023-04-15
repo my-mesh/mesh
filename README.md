@@ -2,6 +2,16 @@
 
 Der Mesh Master für den Raspberry Pi welcher die Kommunikation über NRF24 ermöglicht. Hierfür wurde das [pyrf24](https://pypi.org/project/pyrf24/) package verwendet.
 
+## Einstieg
+```sh
+git clone https://github.com/my-mesh/mesh.git
+cd server
+python -m venv env
+. env/bin/activate
+pip install -r requirements.txt
+python main.py
+```
+
 ## Projekt Aufbau
 
 ### [main.py](https://github.com/my-mesh/mesh/blob/main/main.py)
